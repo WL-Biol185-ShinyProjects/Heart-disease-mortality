@@ -9,18 +9,13 @@ fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-<<<<<<< HEAD
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 100,
-=======
+
       sliderInput("bins", 
                   actionButton(),
                   "Number of bins:",
                   min = 1,
-                  max = 50,
->>>>>>> 7abc71cf1942072758f5eb48c4fe7461c11979cb
+                  max = 100,
+
                   value = 30)
     ),
     
@@ -29,8 +24,4 @@ fluidPage(
       plotOutput("distPlot")
     )
   )
-<<<<<<< HEAD
 )
-=======
-)
->>>>>>> 7abc71cf1942072758f5eb48c4fe7461c11979cb
