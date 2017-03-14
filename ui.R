@@ -1,26 +1,14 @@
-library(shiny)
+library(markdown)
 
-# Define UI for application that draws a histogram
-fluidPage(
-  
-  # Application title
-  titlePanel("Old Faithful Geyser Data"),
-  
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
+navbarPage("Tabs",
+           tabPanel("Map",
+                    verbatimTextOutput("map")
+           ),
+           tabPanel("Gender",
+                    verbatimTextOutput("gender")
+           ),
+           tabPanel("Race/Ethnicity",
+                    verbatimTextOutput("race/ethnicity")
+           )
+           )
 
-      sliderInput("bins", 
-                  actionButton(),
-                  "Number of bins:",
-                  min = 1,
-                  max = 100,
-                  value = 30)
-    ),
-    
-    # Show a plot of the generated distribution
-    mainPanel(
-      plotOutput("distPlot")
-    )
-  )
-)
