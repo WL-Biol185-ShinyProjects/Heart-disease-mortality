@@ -25,3 +25,4 @@ vignettes/*.pdf
 .Rproj.user
 *.Rproj*
 03-data-wrangling.Rmd
+ui.R
