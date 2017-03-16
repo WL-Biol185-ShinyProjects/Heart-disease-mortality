@@ -1,0 +1,11 @@
+
+This is how to make the map of the counties overlayed with the states:
+library(leaflet)
+
+leaflet(data = mapStates) %>% addTiles() %>%
++     +     addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE) %>%
++ addPolygons(data = counties)
+Error in getMapData(map) : argument "map" is missing, with no default
+> test <- leaflet(data = mapStates) %>% addTiles() %>%
++     addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
+> test %>% addPolygons(data = counties)
