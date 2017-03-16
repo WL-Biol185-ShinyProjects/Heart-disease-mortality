@@ -1,15 +1,20 @@
 library(shiny)
+library(leaflet)
+library(maps)
+library(ggplot2)
+library(dplyr)
 
-function(input, output, session) {
-  output$plot <- renderPlot({
-    plot(cars, type=input$plotType)
-  })
+function(input,output,session) {
   
-  output$summary <- renderPrint({
-    summary(cars)
-  })
+ output$MyMap <- renderLeaflet({
+    leaflet(data = mapStates) %>% 
+      addTiles() %>%
+        addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)%>%
+          addPolygons(data = rgdal::readOGR("Counties.JSON", "OGRGeoJSON"))
+                               })
+     
   
-  output$table <- DT::renderDataTable({
-    DT::datatable(cars)
-  })
-}
+  
+                               }
+
+
