@@ -1,8 +1,17 @@
 library(markdown)
+library(leaflet)
 
-navbarPage("Tabs",
-           tabPanel("Map",
-                    verbatimTextOutput("map")
+fluidPage(
+
+titlePanel("US Heart Disease Mortality"),
+
+navbarPage("",
+  
+          tabPanel("Map",
+                    verbatimTextOutput("map"),
+             leafletOutput("MyMap"),
+             p()
+           
            ),
            tabPanel("Gender",
                     verbatimTextOutput("gender")
@@ -10,5 +19,9 @@ navbarPage("Tabs",
            tabPanel("Race/Ethnicity",
                     verbatimTextOutput("race/ethnicity")
            )
+           
+           
            )
+
+)
 
