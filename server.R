@@ -10,7 +10,10 @@ function(input,output,session) {
     leaflet(data = mapStates) %>% 
       addTiles() %>%
         addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)%>%
-          addPolygons(data = rgdal::readOGR("Counties.JSON", "OGRGeoJSON"))
+          addPolygons(data = rgdal::readOGR("Counties.JSON", "OGRGeoJSON"), group = "Counties") %>%
+            addLayersControl(
+              overlayGroups = c("Counties"), options = layersControlOptions(collapsed = FALSE)
+                            )
                                })
      
   
