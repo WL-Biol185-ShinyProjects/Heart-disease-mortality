@@ -4,13 +4,16 @@ library(maps)
 library(ggplot2)
 library(dplyr)
 
+counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
+states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
+
 function(input,output,session) {
   
  output$MyMap <- renderLeaflet({
     leaflet(data = mapStates) %>% 
       addTiles() %>%
         addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)%>%
-          addPolygons(data = rgdal::readOGR("Counties.JSON", "OGRGeoJSON"), group = "Counties") %>%
+          addPolygons(data = counties, group = "Counties") %>%
             addLayersControl(
               overlayGroups = c("Counties"), options = layersControlOptions(collapsed = FALSE)
                             )

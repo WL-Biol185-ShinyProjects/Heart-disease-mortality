@@ -1,6 +1,9 @@
 library(markdown)
 library(leaflet)
 
+counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
+states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
+
 fluidPage(
 
 titlePanel("US Heart Disease Mortality"),
