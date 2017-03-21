@@ -18,9 +18,15 @@ function(input,output,session) {
               overlayGroups = c("Counties"), options = layersControlOptions(collapsed = FALSE)
                             )
                                })
+ output$MaleMap <- renderPlot({
+   Male %>%
+    group_by(LocationAbbr) %>%
+      summarize(ave_value = mean(Data_Value, na.rm = TRUE)) %>%
+        ggplot(aes(LocationAbbr, ave_value)) + geom_boxplot()
+   
+                                })
      
   
-  
-                               }
+                                }
 
 

@@ -17,7 +17,9 @@ navbarPage("",
            
            ),
            tabPanel("Gender",
-                    verbatimTextOutput("gender")
+                    verbatimTextOutput("gender"),
+            plotOutput("MaleMap"),
+            p()
            ),
            tabPanel("Race/Ethnicity",
                     verbatimTextOutput("race/ethnicity")
