@@ -23,8 +23,7 @@ function(input,output,session) {
  output$MaleMap <- renderPlot({
    Male %>%
     group_by(LocationAbbr) %>%
-      summarize(ave_value = mean(Data_Value, na.rm = TRUE)) %>%
-        ggplot(aes(LocationAbbr, ave_value)) + geom_boxplot()
+        ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot()
    
                                 })
  
@@ -32,8 +31,7 @@ function(input,output,session) {
  output$FemaleMap <- renderPlot({
    Female %>%
      group_by(LocationAbbr) %>%
-       summarize(ave_value = mean(Data_Value, na.rm = TRUE)) %>%
-         ggplot(aes(LocationAbbr, ave_value)) + geom_boxplot()
+         ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot()
     
                                 })
      
