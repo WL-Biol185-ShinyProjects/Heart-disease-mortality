@@ -15,20 +15,20 @@ navbarPage("",
              leafletOutput("MyMap"),
              p()
            
-           ),
-           tabPanel("Gender",
+                  ),
+           
+          tabPanel("Gender",
                     verbatimTextOutput("gender"),
             plotOutput("MaleMap"),
             p(),
             plotOutput("FemaleMap"),
             p()
-           ),
-           tabPanel("Race/Ethnicity",
-                    verbatimTextOutput("race/ethnicity")
-           )
+                  ),
            
-           
-           )
+          tabPanel("Race/Ethnicity",
+                   verbatimTextOutput("race/ethnicity")
+                  )
 
-)
+           )
+           )
 

@@ -1,0 +1,30 @@
+---
+title: "State Dropdown Box"
+author: "Stephen Himmelberg"
+date: "3/23/2017"
+output: html_document
+---
+server.r
+```
+     
+ output$value <- renderPrint({ input$select })
+```
+
+
+ui.r
+```
+ selectInput("select", label = h3("Select box"), 
+                        choices = list("AK" = 1, "AL" = 2, "AR" = 3, "AS" = 4, "AZ" = 5, "CA" = 6,
+                                       "CO" = 7, "CT" = 8, "DC" = 9, "DE" = 10, "FL" = 11, "GA" = 12,
+                                       "GU" = 13, "HI" = 14, "IA" = 15, "ID" = 16, "IL" = 17, "IN" = 18,
+                                       "KS" = 19, "KY" = 20, "LA" = 21, "MA" = 22, "MD" = 23, "ME" = 24, 
+                                       "MI" = 25, "MN" = 26, "MO" = 27, "MP" = 28, "MS" = 29, "MT" = 30,
+                                       "NC" = 31, "ND" = 32, "NE" = 33, "NH" = 34, "NJ" = 35, "NM" = 36, 
+                                       "NV" = 37, "NY" = 38, "OH" = 39, "OK" = 40, "OR" = 41, "PA" = 42,
+                                       "PR" = 43, "RI" = 44, "SC" = 45, "SD" = 46, "TN" = 47, "TX" = 48, 
+                                       "US" = 49, "UT" = 50, "VA" = 51, "VI" = 52, "VT" = 53, "WA" = 54, 
+                                       "WI" = 55, "WV" = 56, "WY" = 57), 
+                                       selected = 1),
+                      hr(),
+                      fluidRow(column(3, verbatimTextOutput("value"))),
+```

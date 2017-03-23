@@ -23,19 +23,20 @@ function(input,output,session) {
  output$MaleMap <- renderPlot({
    Male %>%
     group_by(LocationAbbr) %>%
-        ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot()
+        ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot() + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Male Heart Disease by State")
    
-                                })
+   
+                                }
+   
+                              )
  
-
  output$FemaleMap <- renderPlot({
    Female %>%
      group_by(LocationAbbr) %>%
-         ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot()
+         ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot() + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Female Heart Disease by State")
     
                                 })
-     
-  
+
                                 }
 
 
