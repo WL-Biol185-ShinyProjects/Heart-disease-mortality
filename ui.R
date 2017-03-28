@@ -1,5 +1,10 @@
-library(markdown)
+library(shiny)
 library(leaflet)
+library(maps)
+library(ggplot2)
+library(dplyr)
+library(htmltools)
+library(markdown)
 
 counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
   placeTypes <- as.character(counties@data$LSAD)
@@ -11,6 +16,7 @@ counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
   placeTypes[placeTypes == "Muno"] <- "Municipio"
   counties@data$placeType <- placeTypes
   counties@data$fullName <- paste(counties@data$NAME, counties@data$placeType)
+  counties@data$fullName <- gsub(" $", "", counties@data$fullName)
 states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
 
 fluidPage(
