@@ -42,7 +42,7 @@ navbarPage("",
             broken up by race/ethnicity as well as gender. Below is a link to access and download
             the free source data set."),
           br(),
-          p(href = "https://catalog.data.gov/dataset/heart-disease-mortality-data-among-us-adults-35-by-state-territory-and-county")
+          p("https://catalog.data.gov/dataset/heart-disease-mortality-data-among-us-adults-35-by-state-territory-and-county")
                   ),
            
           tabPanel("Map",
