@@ -35,11 +35,10 @@ navbarPage("",
             100,000 individuals in every US State and also at the county level. The data is also 
             broken up by race/ethnicity as well as gender. Below is a link to access and download
             the free source data set."),
-          br(),
-          p("https://catalog.data.gov/dataset/heart-disease-mortality-data-among-us-adults-35-by-state-territory-and-county")
-                  ),
-           
-          tabPanel("Map",
+          a(href = "https://catalog.data.gov/dataset/heart-disease-mortality-data-among-us-adults-35-by-state-territory-and-county", "US Heart Disease Mortality Data")
+                 ),
+          
+           tabPanel("Map",
                     verbatimTextOutput("map"),
              leafletOutput("MyMap"),
              p()
