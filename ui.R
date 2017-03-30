@@ -19,6 +19,7 @@ counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
   counties@data$fullName <- gsub(" $", "", counties@data$fullName)
 states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
 
+
 fluidPage(
 
 titlePanel("US Heart Disease Mortality"),
