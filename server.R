@@ -48,4 +48,6 @@ function(input,output,session) {
 
                                 }
 
-
+#Overall%>%
+#group_by(LocationAbbr, Race.Ethnicity)%>%
+#summarize(n = n(), ave_value = mean(Data_Value, na.rm = TRUE))
