@@ -14,7 +14,7 @@ counties@data <- county.data
 function(input,output,session) {
   
  output$MyMap <- renderLeaflet({
-    leaflet(data = mapStates) %>% 
+    leaflet(data = states) %>% 
       addTiles() %>%
         addPolygons(data = states, group = "States") %>%
           addPolygons(data = counties, group = "Counties") %>%
