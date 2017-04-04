@@ -54,3 +54,6 @@ function(input,output,session) {
 #Overall%>%
 #group_by(LocationAbbr, Race.Ethnicity)%>%
 #summarize(n = n(), ave_value = mean(Data_Value, na.rm = TRUE))
+#filter(Race.Ethnicity == "Hispanic")%>%       we need to put input$ instead of hispanic to fit in the drop down box
+#ggplot(aes(LocationAbbr, ave_value)) + geom_bar(stat = "identity") 
+
