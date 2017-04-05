@@ -12,6 +12,7 @@ county.data <- read.table("data/Joined-County-Data.txt")
 counties@data <- county.data
 Male <- read.table("data/Male-Raw-Heart-Disease-Data-Set.txt")
 Female <- read.table("data/Female-Raw-Heart-Disease-Data-Set.txt")
+Overall <-read.table("data/Overall-Geneder-Raw-Heart-Disease-Data-Set.txt")
 
 
 fluidPage(
@@ -49,12 +50,20 @@ navbarPage("",
                     verbatimTextOutput("gender"),
             plotOutput("MaleMap"),
             p(),
+            selectInput("State", label = h5("State"), 
+                        choices = unique(Male$LocationAbbr), 
+                        selected = 1),
             plotOutput("FemaleMap"),
             p()
                   ),
            
           tabPanel("Race/Ethnicity",
-                   verbatimTextOutput("race/ethnicity")
+                   verbatimTextOutput("race/ethnicity"),
+              plotOutput("RaceMap"),
+              p(),
+              selectInput("Race", label = h5("Race"), 
+                          choices = unique(Overall$Race.Ethnicity), 
+                          selected = 1)
                   )
 
            )

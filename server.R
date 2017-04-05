@@ -12,6 +12,7 @@ county.data <- read.table("data/Joined-County-Data.txt")
 counties@data <- county.data
 Male <- read.table("data/Male-Raw-Heart-Disease-Data-Set.txt")
 Female <- read.table("data/Female-Raw-Heart-Disease-Data-Set.txt")
+Overall <-read.table("data/Overall-Geneder-Raw-Heart-Disease-Data-Set.txt")
 
 function(input,output,session) {
   
@@ -28,7 +29,7 @@ function(input,output,session) {
  
  output$MaleMap <- renderPlot({
    Male %>%
-    group_by(LocationAbbr) %>%
+    filter(LocationAbbr == input$State) %>%
         ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot() + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Male Heart Disease by State")
    
    
@@ -42,12 +43,15 @@ function(input,output,session) {
          ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot() + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Female Heart Disease by State")
     
                                 })
+ 
+ output$RaceMap <- renderPlot({
+   Overall%>%
+    group_by(LocationAbbr, Race.Ethnicity)%>%
+      summarize(n = n(), ave_value = mean(Data_Value, na.rm = TRUE))%>%
+        filter(Race.Ethnicity == input$Race)%>%
+          ggplot(aes(LocationAbbr, ave_value)) + geom_bar(stat = "identity") + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Racial Disparities in Heart Disease by State")
+                             })
 
                                 }
 
-#Overall%>%
-#group_by(LocationAbbr, Race.Ethnicity)%>%
-#summarize(n = n(), ave_value = mean(Data_Value, na.rm = TRUE))
-#filter(Race.Ethnicity == "Hispanic")%>%       we need to put input$ instead of hispanic to fit in the drop down box
-#ggplot(aes(LocationAbbr, ave_value)) + geom_bar(stat = "identity") 
 
