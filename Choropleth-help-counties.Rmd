@@ -43,3 +43,8 @@ leaflet(data = counties) %>%
 +                         style = list("font-weight" = "normal", padding = "3px 8px"),
 +                         textsize = "15px",
 +                         direction = "auto"))
+
+
+
+
+

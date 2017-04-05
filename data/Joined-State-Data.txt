@@ -1,0 +1,53 @@
+"GEO_ID" "STATE" "NAME" "LSAD" "CENSUSAREA" "State" "Data_Value" "Gender" "Race.Ethnicity" "Longitude" "Latitude"
+"1" "0400000US23" "23" "Maine" "" 30842.923 "ME" 288.2 "Overall" "Overall" 45.3889 -69.2349
+"2" "0400000US25" "25" "Massachusetts" "" 7800.058 "MA" 270.8 "Overall" "Overall" 42.2573 -71.8024
+"3" "0400000US26" "26" "Michigan" "" 56538.901 "MI" 387 "Overall" "Overall" 44.3371 -85.4387
+"4" "0400000US30" "30" "Montana" "" 145545.801 "MT" 293.3 "Overall" "Overall" 47.0332 -109.653
+"5" "0400000US32" "32" "Nevada" "" 109781.18 "NV" 378.5 "Overall" "Overall" 39.352 -116.65
+"6" "0400000US34" "34" "New Jersey" "" 7354.22 "NJ" 328.6 "Overall" "Overall" 40.1987 -74.6768
+"7" "0400000US36" "36" "New York" "" 47126.399 "NY" 356.1 "Overall" "Overall" 42.9465 -75.512
+"8" "0400000US37" "37" "North Carolina" "" 48617.905 "NC" 316.2 "Overall" "Overall" 35.5475 -79.4019
+"9" "0400000US39" "39" "Ohio" "" 40860.694 "OH" 362.9 "Overall" "Overall" 40.2882 -82.7866
+"10" "0400000US42" "42" "Pennsylvania" "" 44742.703 "PA" 344.4 "Overall" "Overall" 40.8749 -77.8022
+"11" "0400000US44" "44" "Rhode Island" "" 1033.814 "RI" 317.5 "Overall" "Overall" 41.682 -71.5617
+"12" "0400000US47" "47" "Tennessee" "" 41234.896 "TN" 395.5 "Overall" "Overall" 35.8465 -86.3351
+"13" "0400000US48" "48" "Texas" "" 261231.711 "TX" 330.7 "Overall" "Overall" 31.4906 -99.3517
+"14" "0400000US49" "49" "Utah" "" 82169.62 "UT" 286.4 "Overall" "Overall" 39.3231 -111.676
+"15" "0400000US53" "53" "Washington" "" 66455.521 "WA" 268.4 "Overall" "Overall" 47.378 -120.428
+"16" "0400000US55" "55" "Wisconsin" "" 54157.805 "WI" 307.7 "Overall" "Overall" 44.6333 -90.0068
+"17" "0400000US72" "72" "Puerto Rico" "" 3423.775 "PR" 224.8 "Overall" "Overall" 18.2214 -66.4654
+"18" "0400000US24" "24" "Maryland" "" 9707.241 "MD" 331.6 "Overall" "Overall" 39.0648 -76.82
+"19" "0400000US01" "01" "Alabama" "" 50645.326 "AL" 435.3 "Overall" "Overall" 32.7949 -86.8267
+"20" "0400000US02" "02" "Alaska" "" 570640.95 "AK" 269.3 "Overall" "Overall" 64.3173 -152.571
+"21" "0400000US04" "04" "Arizona" "" 113594.084 "AZ" 273.1 "Overall" "Overall" 34.2921 -111.664
+"22" "0400000US05" "05" "Arkansas" "" 52035.477 "AR" 418.1 "Overall" "Overall" 34.8982 -92.434
+"23" "0400000US06" "06" "California" "" 155779.22 "CA" 289.5 "Overall" "Overall" 37.2414 -119.601
+"24" "0400000US08" "08" "Colorado" "" 103641.888 "CO" 247.7 "Overall" "Overall" 38.997 -105.549
+"25" "0400000US09" "09" "Connecticut" "" 4842.355 "CT" 290.6 "Overall" "Overall" 41.6179 -72.7254
+"26" "0400000US10" "10" "Delaware" "" 1948.543 "DE" 325.9 "Overall" "Overall" 38.9952 -75.5014
+"27" "0400000US11" "11" "District of Columbia" "" 61.048 "DC" 411.1 "Overall" "Overall" 38.9005 -77.0159
+"28" "0400000US12" "12" "Florida" "" 53624.759 "FL" 293 "Overall" "Overall" 28.6588 -82.497
+"29" "0400000US13" "13" "Georgia" "" 57513.485 "GA" 345.9 "Overall" "Overall" 32.6549 -83.4547
+"30" "0400000US15" "15" "Hawaii" "" 6422.628 "HI" 264.1 "Overall" "Overall" 20.2408 -156.326
+"31" "0400000US16" "16" "Idaho" "" 82643.117 "ID" 290.1 "Overall" "Overall" 44.3858 -114.661
+"32" "0400000US17" "17" "Illinois" "" 55518.93 "IL" 331.7 "Overall" "Overall" 40.0644 -89.2034
+"33" "0400000US18" "18" "Indiana" "" 35826.109 "IN" 359.6 "Overall" "Overall" 39.9128 -86.2757
+"34" "0400000US19" "19" "Iowa" "" 55857.13 "IA" 321.3 "Overall" "Overall" 42.076 -93.5022
+"35" "0400000US20" "20" "Kansas" "" 81758.717 "KS" 304.6 "Overall" "Overall" 38.4828 -98.384
+"36" "0400000US21" "21" "Kentucky" "" 39486.338 "KY" 394.8 "Overall" "Overall" 37.5266 -85.29
+"37" "0400000US22" "22" "Louisiana" "" 43203.905 "LA" 414.9 "Overall" "Overall" 31.0964 -92.0302
+"38" "0400000US27" "27" "Minnesota" "" 79626.743 "MN" 229.6 "Overall" "Overall" 46.3159 -94.3068
+"39" "0400000US28" "28" "Mississippi" "" 46923.274 "MS" 450.8 "Overall" "Overall" 32.7577 -89.6646
+"40" "0400000US29" "29" "Missouri" "" 68741.522 "MO" 376.2 "Overall" "Overall" 38.3641 -92.4798
+"41" "0400000US31" "31" "Nebraska" "" 76824.171 "NE" 283.2 "Overall" "Overall" 41.5228 -99.8085
+"42" "0400000US33" "33" "New Hampshire" "" 8952.651 "NH" 286.9 "Overall" "Overall" 43.6834 -71.5794
+"43" "0400000US35" "35" "New Mexico" "" 121298.148 "NM" 282.8 "Overall" "Overall" 34.4228 -106.102
+"44" "0400000US38" "38" "North Dakota" "" 69000.798 "ND" 291.3 "Overall" "Overall" 47.4471 -100.47
+"45" "0400000US40" "40" "Oklahoma" "" 68594.921 "OK" 437.8 "Overall" "Overall" 35.5848 -97.5098
+"46" "0400000US41" "41" "Oregon" "" 95988.013 "OR" 257.4 "Overall" "Overall" 43.9313 -120.554
+"47" "0400000US45" "45" "South Carolina" "" 30060.696 "SC" 347.8 "Overall" "Overall" 33.9187 -80.9014
+"48" "0400000US46" "46" "South Dakota" "" 75811 "SD" 296.6 "Overall" "Overall" 44.4332 -100.236
+"49" "0400000US50" "50" "Vermont" "" 9216.657 "VT" 295.5 "Overall" "Overall" 44.0733 -72.661
+"50" "0400000US51" "51" "Virginia" "" 39490.086 "VA" 304.7 "Overall" "Overall" 37.5188 -78.8507
+"51" "0400000US54" "54" "West Virginia" "" 24038.21 "WV" 382.7 "Overall" "Overall" 38.6411 -80.6147
+"52" "0400000US56" "56" "Wyoming" "" 97093.141 "WY" 311.1 "Overall" "Overall" 42.9984 -107.552

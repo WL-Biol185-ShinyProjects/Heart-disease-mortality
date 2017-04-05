@@ -10,6 +10,8 @@ counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
 states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
 county.data <- read.table("data/Joined-County-Data.txt")
 counties@data <- county.data
+state.data <- read.table("data/Joined-States-Data.txt")
+states@data <- state.data
 Male <- read.table("data/Male-Raw-Heart-Disease-Data-Set.txt")
 Female <- read.table("data/Female-Raw-Heart-Disease-Data-Set.txt")
 Overall <-read.table("data/Overall-Geneder-Raw-Heart-Disease-Data-Set.txt")
