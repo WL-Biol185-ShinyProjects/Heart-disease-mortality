@@ -51,13 +51,17 @@ navbarPage("",
           tabPanel("Gender",
                     verbatimTextOutput("gender"),
             plotOutput("MaleMap"),
-            p(),
-            selectInput("State", label = h5("State"), 
+            selectInput("StateMale", label = h5("State"), 
                         choices = unique(Male$LocationAbbr), 
-                        selected = 1),
+                        selected = 1, multiple = TRUE),
+            p(),
+            
             plotOutput("FemaleMap"),
+            selectInput("StateFemale", label = h5("State"), 
+                        choices = unique(Female$LocationAbbr), 
+                        selected = 1, multiple = TRUE),
             p()
-                  ),
+                ),
            
           tabPanel("Race/Ethnicity",
                    verbatimTextOutput("race/ethnicity"),
@@ -65,7 +69,7 @@ navbarPage("",
               p(),
               selectInput("Race", label = h5("Race"), 
                           choices = unique(Overall$Race.Ethnicity), 
-                          selected = 1)
+                          selected = 1, multiple = TRUE)
                   )
 
            )
