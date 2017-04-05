@@ -29,18 +29,14 @@ function(input,output,session) {
  
  output$MaleMap <- renderPlot({
    Male %>%
-    filter(LocationAbbr == input$State) %>%
-        ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot() + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Male Heart Disease by State")
-   
-   
-                                }
-   
-                              )
+      filter(LocationAbbr %in% input$StateMale) %>%
+        ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot(color = "blue2") + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Male and Female Heart Disease by State")
+                                })
  
  output$FemaleMap <- renderPlot({
    Female %>%
-     group_by(LocationAbbr) %>%
-         ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot() + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Female Heart Disease by State")
+     filter(LocationAbbr %in% input$StateFemale) %>%         
+       ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot(colour = "hotpink2") + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Female Heart Disease by State")
     
                                 })
  
@@ -48,7 +44,7 @@ function(input,output,session) {
    Overall%>%
     group_by(LocationAbbr, Race.Ethnicity)%>%
       summarize(n = n(), ave_value = mean(Data_Value, na.rm = TRUE))%>%
-        filter(Race.Ethnicity == input$Race)%>%
+        filter(Race.Ethnicity %in% input$Race)%>%
           ggplot(aes(LocationAbbr, ave_value)) + geom_bar(stat = "identity") + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Racial Disparities in Heart Disease by State")
                              })
 
