@@ -13,7 +13,7 @@
 +                 fillOpacity = 0.8, 
 +                 color = "#BDBDC3", 
 +                 weight = 1,
-+                 popup = popup) %>%
++                 popupcounties = popup) %>%
 +     setView(lat = 38.0110306, lng = -110.4080342, zoom = 3)
 
 
@@ -46,5 +46,23 @@ leaflet(data = counties) %>%
 
 
 
-
+leaflet(data = counties) %>%
++     addProviderTiles("OpenStreetMap.BlackAndWhite") %>%
++     addPolygons(fillColor = ~pal(Data_Value), 
++                 fillOpacity = 0.8, 
++                 color = "#BDBDC3", 
++                 weight = 1,
++                 highlight = highlightOptions(
++                     weight = 5,
++                     color = "#666",
++                     dashArray = "",
++                     fillOpacity = 0.7,
++                         bringToFront = TRUE),
++             label = labels,
++                 labelOptions = labelOptions(
++                 style = list("font-weight" = "normal", padding = "3px 8px"),
++                     textsize = "15px",
++                     direction = "auto")) %>%
++         addLegend(pal = pal, values = ~Data_Value, opacity = 0.7, title = NULL,
++               position = "bottomright")
 

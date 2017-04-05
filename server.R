@@ -10,8 +10,26 @@ counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
 states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
 county.data <- read.table("data/Joined-County-Data.txt")
 counties@data <- county.data
-state.data <- read.table("data/Joined-States-Data.txt")
+pal <- colorNumeric(
+       palette = "YlOrRd",
+       domain = counties@data$Data_Value)
+labels <- sprintf(
+                  "<strong>%s</strong><br/>%g people / 100,000 people",
+                  counties@data$fullName, 
+                  counties@data$Data_Value
+                  ) %>% 
+          lapply(htmltools::HTML)
+state.data <- read.table("data/Joined-State-Data.txt")
 states@data <- state.data
+pal1 <- colorNumeric(
+        palette = "YlOrRd",
+        domain = states@data$Data_Value)
+labels1 <- sprintf(
+                  "<strong>%s</strong><br/>%g people / 100,000 people",
+                  states@data$NAME, 
+                  states@data$Data_Value
+                  ) %>% 
+          lapply(htmltools::HTML)
 Male <- read.table("data/Male-Raw-Heart-Disease-Data-Set.txt")
 Female <- read.table("data/Female-Raw-Heart-Disease-Data-Set.txt")
 Overall <-read.table("data/Overall-Geneder-Raw-Heart-Disease-Data-Set.txt")
@@ -19,13 +37,57 @@ Overall <-read.table("data/Overall-Geneder-Raw-Heart-Disease-Data-Set.txt")
 function(input,output,session) {
   
  output$MyMap <- renderLeaflet({
-    leaflet(data = states) %>% 
-      addTiles() %>%
-        addPolygons(data = states, group = "States") %>%
-          addPolygons(data = counties, group = "Counties") %>%
-            addLayersControl(
-              overlayGroups = c("Counties", "States"), options = layersControlOptions(collapsed = FALSE)
-                            )
+    if(input$MapType == "Counties") 
+          {leaflet(data = counties) %>%
+             addProviderTiles("OpenStreetMap.BlackAndWhite") %>%
+             addPolygons(fillColor = ~pal(Data_Value), 
+                         fillOpacity = 0.8, 
+                         color = "#BDBDC3", 
+                         weight = 1,
+                         highlight = highlightOptions(
+                                     weight = 5,
+                                     color = "#666",
+                                     dashArray = "",
+                                     fillOpacity = 0.7,
+                                     bringToFront = TRUE),
+                         label = labels,
+                         labelOptions = labelOptions(
+                                        style = list("font-weight" = "normal", 
+                                                     padding = "3px 8px"),
+                                        textsize = "15px",
+                                        direction = "auto")) %>%
+            addLegend(pal = pal, 
+                      values = ~Data_Value, 
+                      opacity = 0.7, 
+                      title = NULL,
+                      position = "bottomright") %>%
+            setView(lat = 38.0110306, lng = -110.4080342, zoom = 3)
+        }
+    else{leaflet(data = states) %>%
+             addProviderTiles("OpenStreetMap.BlackAndWhite") %>%
+             addPolygons(fillColor = ~pal1(Data_Value), 
+                         fillOpacity = 0.8, 
+                         color = "#BDBDC3", 
+                         weight = 1,
+                         highlight = highlightOptions(
+                                     weight = 5,
+                                     color = "#666",
+                                     dashArray = "",
+                                     fillOpacity = 0.7,
+                                     bringToFront = TRUE),
+                         label = labels1,
+                         labelOptions = labelOptions(
+                                        style = list("font-weight" = "normal", 
+                                                     padding = "3px 8px"),
+                                        textsize = "15px",
+                                        direction = "auto")) %>%
+               addLegend(pal = pal1, 
+                         values = ~Data_Value, 
+                         opacity = 0.7, 
+                         title = NULL,
+                         position = "bottomright") %>%
+            setView(lat = 38.0110306, lng = -110.4080342, zoom = 3)
+        }        
                                })
  
  
