@@ -45,7 +45,7 @@ function(input,output,session) {
     group_by(LocationAbbr, Race.Ethnicity)%>%
       summarize(n = n(), ave_value = mean(Data_Value, na.rm = TRUE))%>%
         filter(Race.Ethnicity %in% input$Race)%>%
-          ggplot(aes(LocationAbbr, ave_value)) + geom_bar(stat = "identity") + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Racial Disparities in Heart Disease by State")
+          ggplot(aes(LocationAbbr, ave_value, color = Race.Ethnicity)) + geom_bar(stat = "identity") + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Racial Disparities in Heart Disease by State")
                              })
 
                                 }
