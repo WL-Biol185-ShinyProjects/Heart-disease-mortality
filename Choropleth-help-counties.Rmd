@@ -1,0 +1,45 @@
+
+> library(rgdal)
+> library(readr)
+
+> pal <- colorNumeric(
++     palette = "YlGnBu",
++     domain = counties@data$Data_Value)
+
+> popup <- paste0("<strong>", counties@data$fullName, "</strong>", "<br>", "Number of deaths per 100,000: ", counties@data$Data_Value)
+> leaflet(data = counties) %>%
++     addProviderTiles("OpenStreetMap.BlackAndWhite") %>%
++     addPolygons(fillColor = ~pal(Data_Value), 
++                 fillOpacity = 0.8, 
++                 color = "#BDBDC3", 
++                 weight = 1,
++                 popup = popup) %>%
++     setView(lat = 38.0110306, lng = -110.4080342, zoom = 3)
+
+
+Used model from http://nagraj.net/notes/choropleth-maps-with-leaflet/
+
+
+labels <- sprintf(
++     "<strong>%s</strong><br/>%g people / 100,000 people",
++     counties@data$fullName, counties@data$Data_Value
++ ) %>% lapply(htmltools::HTML)
+
+
+leaflet(data = counties) %>%
++     addProviderTiles("OpenStreetMap.BlackAndWhite") %>%
++     addPolygons(fillColor = ~pal(Data_Value), 
++                 fillOpacity = 0.8, 
++                 color = "#BDBDC3", 
++                 weight = 1,
++                 highlight = highlightOptions(
++                     weight = 5,
++                     color = "#666",
++                     dashArray = "",
++                     fillOpacity = 0.7,
++                     bringToFront = TRUE),
++                     label = labels,
++                     labelOptions = labelOptions(
++                         style = list("font-weight" = "normal", padding = "3px 8px"),
++                         textsize = "15px",
++                         direction = "auto"))
