@@ -5,6 +5,7 @@ library(ggplot2)
 library(dplyr)
 library(htmltools)
 library(markdown)
+library(shinythemes)
 
 counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
 states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
@@ -36,6 +37,7 @@ Overall <-read.table("data/Overall-Geneder-Raw-Heart-Disease-Data-Set.txt")
 
 
 fluidPage(
+          theme = shinytheme("cerulean"),
           titlePanel("US Heart Disease Mortality"),
           navbarPage("",
                     tabPanel("Home",
