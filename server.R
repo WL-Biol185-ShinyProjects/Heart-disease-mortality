@@ -5,6 +5,7 @@ library(ggplot2)
 library(dplyr)
 library(htmltools)
 library(markdown)
+library(shinythemes)
 
 counties <- rgdal::readOGR("Counties.JSON", "OGRGeoJSON")
 states <- rgdal::readOGR("States.JSON", "OGRGeoJSON")
@@ -34,8 +35,9 @@ Male <- read.table("data/Male-Raw-Heart-Disease-Data-Set.txt")
 Female <- read.table("data/Female-Raw-Heart-Disease-Data-Set.txt")
 Overall <-read.table("data/Overall-Geneder-Raw-Heart-Disease-Data-Set.txt")
 
-function(input,output,session) {
   
+function(input,output,session) {
+ 
  output$MyMap <- renderLeaflet({
     if(input$MapType == "Counties") 
           {leaflet(data = counties) %>%
