@@ -77,7 +77,13 @@ fluidPage(
                                               )
                                        ),
                               leafletOutput("MyMap"),
-                              p()
+                              br(),
+                              p("Welcome to our Map page! Here you can toggle between States or Counties to see a visual
+                                representation on Heart Disease Mortality rates for individuals 35 years or older in the
+                                United States. You can zoom in on the map by scrolling with your cursor on top of the map.
+                                A text box will appear when hover your cursor over a US county or state. The text box will
+                                display the number of deaths due to heart disease for every 100,000 people."
+                               )
                              ),
                     tabPanel("Gender",
                              verbatimTextOutput("gender"),
@@ -88,7 +94,19 @@ fluidPage(
                                          selected = 1, 
                                          multiple = TRUE
                                         ),
-                             p(),
+                             br(),
+                             p("Welcome to our Gender page! Here you can compare rates of Heart Disease Mortality bewteen men 
+                               and women using a boxplot. In the drop down box you can select multiple states to compare the data. The male data
+                               will appear in the color blue, while the female data appears in the color pink."),
+                             br(),
+                             strong("Infromation on how to read a boxplot:"),
+                             p("Line inside of box = Median, this is the point where 50% of the data is above the line and 50% is below"),
+                             p("Top of box = this marks the upper quartile, this means that 75% of the data is below this point"),
+                             p("Bottom of box = this marks the lower quartile, this means that 25% of the data is below this point"),
+                             p("Everything else represents data points that are outside of the 25%-75% range"),
+                             br(),
+                             p("For more information on how to interpret boxplots go to the following page"),
+                             a(href = "http://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots", "Box Plot Help"),
                              plotOutput("FemaleMap"),
                              selectInput("StateFemale", 
                                          label = h5("State"), 
