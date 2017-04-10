@@ -123,7 +123,10 @@ fluidPage(
                                          label = h5("Race"), 
                                          choices = unique(Overall$Race.Ethnicity), 
                                          selected = 1, 
-                                         multiple = TRUE)
+                                         multiple = TRUE),
+                             p("Welcome to out Race/Ethnicity page! Here you can compare rates of Heart Disease Mortality bewteen
+                               different Races/Ethnicities. In the drop down box you can select multiple different Races or 
+                               Ethnicities and graphically compare the data.")
                             )
 
                     )
