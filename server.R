@@ -93,18 +93,12 @@ function(input,output,session) {
                                })
  
  
- output$MaleMap <- renderPlot({
-   Male %>%
-      filter(LocationAbbr %in% input$StateMale) %>%
+ output$OverallMap <- renderPlot({
+   bind_rows(Male, Female)%>%
+      filter(LocationAbbr %in% input$State) %>%
         ggplot(aes(LocationAbbr, Data_Value, color = Gender)) + geom_boxplot() + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Male and Female Heart Disease by State")
                                 })
  
- output$FemaleMap <- renderPlot({
-   Female %>%
-     filter(LocationAbbr %in% input$StateFemale) %>%         
-       ggplot(aes(LocationAbbr, Data_Value)) + geom_boxplot(colour = "hotpink2") + xlab("State Abbreviation") + ylab("Heart Disease Cases (per 100,000 people)") + ggtitle("Female Heart Disease by State")
-    
-                                })
  
  output$RaceMap <- renderPlot({
    Overall%>%

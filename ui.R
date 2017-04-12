@@ -87,11 +87,11 @@ fluidPage(
                              ),
                     tabPanel("Gender",
                              verbatimTextOutput("gender"),
-                             plotOutput("MaleMap"),
-                             selectInput("StateMale", 
+                             plotOutput("OverallMap"),
+                             selectInput("State", 
                                          label = h5("State"), 
-                                         choices = unique(Male$LocationAbbr), 
-                                         selected = 1, 
+                                         choices = unique(Overall$LocationAbbr), 
+                                         selected = "NC", 
                                          multiple = TRUE
                                         ),
                              br(),
@@ -106,14 +106,7 @@ fluidPage(
                              p("Everything else represents data points that are outside of the 25%-75% range"),
                              br(),
                              p("For more information on how to interpret boxplots go to the following page"),
-                             a(href = "http://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots", "Box Plot Help"),
-                             plotOutput("FemaleMap"),
-                             selectInput("StateFemale", 
-                                         label = h5("State"), 
-                                         choices = unique(Female$LocationAbbr), 
-                                         selected = 1, multiple = TRUE
-                                        ),
-                             p()
+                             a(href = "http://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots", "Box Plot Help")
                            ),
                     tabPanel("Race/Ethnicity",
                              verbatimTextOutput("race/ethnicity"),
@@ -122,7 +115,7 @@ fluidPage(
                              selectInput("Race", 
                                          label = h5("Race"), 
                                          choices = unique(Overall$Race.Ethnicity), 
-                                         selected = 1, 
+                                         selected = "Overall", 
                                          multiple = TRUE),
                              p("Welcome to out Race/Ethnicity page! Here you can compare rates of Heart Disease Mortality bewteen
                                different Races/Ethnicities. In the drop down box you can select multiple different Races or 
